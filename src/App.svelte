@@ -1,30 +1,47 @@
 <script>
-	export let name;
-</script>
-
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
+	let inputValue = "";
+	let todos = [];
+	function addTodo() {
+	  if (inputValue === "") alert("allert");
+	  todos = [
+		...todos,
+		{
+		  contents: inputValue,
+		  completed: false
 		}
+	  ];
+	  inputValue = "";
 	}
-</style>
+	function toggleTodo(i) {
+	  todos = [
+		...todos.slice(0, i),
+		{
+		  ...todos[i],
+		  completed: !todos[i].completed
+		},
+		...todos.slice(i + 1)
+	  ];
+	}
+  </script>
+  
+  <style>
+	li.completed {
+	  text-decoration: line-through;
+	  color: #e4e4e4;
+	}
+  </style>
+  
+  <input type="text" bind:value={inputValue} />
+  <button on:click={addTodo}>submit</button>
+  
+  <ul>
+	{#each todos as todo, i}
+	  <!-- svelte-ignore a11y-click-events-have-key-events -->
+	  <li
+		on:click={() => toggleTodo(i)}
+		class={todo.completed ? 'completed' : ''}>
+		{todo.contents}
+	  </li>
+	{/each}
+  </ul>
+  
