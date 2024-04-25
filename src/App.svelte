@@ -67,4 +67,61 @@
 	  </li>
 	{/each}
   </ul>
+  <style>
+	/* Styles pour centrer la page au milieu */
+	html, body {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  width: 100%;
+	  height: 100%;
+	  margin: 0;
+	  background-color: #f5f5f5;
+	}
   
+	/* Conteneur principal */
+	.container {
+	  text-align: center;
+	}
+  
+	/* Liste des tâches */
+	ul {
+	  list-style: none;
+	  padding: 0;
+	  margin: 0;
+	}
+  
+	/* Éléments de la liste des tâches */
+	li {
+	  padding: 10px;
+	  margin-bottom: 5px;
+	  background-color: #f8f9fa;
+	  border-radius: 5px;
+	  transition: background-color 0.3s ease;
+	  display: flex;
+	  align-items: center;
+	}
+  
+	/* Couleur du texte des tâches complétées */
+	.completed {
+	  text-decoration: line-through;
+	  color: #adb5bd;
+	}
+  
+	/* Styles pour les boutons */
+	button {
+	  margin-left: 10px;
+	  padding: 5px 10px;
+	  background-color: #007bff;
+	  color: #fff;
+	  border: none;
+	  border-radius: 3px;
+	  cursor: pointer;
+	  transition: background-color 0.3s ease;
+	}
+  
+	/* Hover sur les boutons */
+	button:hover {
+	  background-color: #0056b3;
+	}
+  </style>
