@@ -28,7 +28,7 @@
 		completedTodos = completedTodos.filter(item => item.id !== todo.id);
 		todos.push(todo);
 	  }
-	  // Mettre à jour les listes après modification
+	  
 	  todos = [...todos];
 	  completedTodos = [...completedTodos];
 	}
@@ -68,7 +68,7 @@
 	{/each}
   </ul>
   <style>
-	/* Styles pour centrer la page au milieu */
+	
 	html, body {
 	  display: flex;
 	  justify-content: center;
@@ -79,19 +79,19 @@
 	  background-color: #f5f5f5;
 	}
   
-	/* Conteneur principal */
+	
 	.container {
 	  text-align: center;
 	}
   
-	/* Liste des tâches */
+	
 	ul {
 	  list-style: none;
 	  padding: 0;
 	  margin: 0;
 	}
   
-	/* Éléments de la liste des tâches */
+	
 	li {
 	  padding: 10px;
 	  margin-bottom: 5px;
@@ -102,13 +102,13 @@
 	  align-items: center;
 	}
   
-	/* Couleur du texte des tâches complétées */
+	
 	.completed {
 	  text-decoration: line-through;
 	  color: #adb5bd;
 	}
   
-	/* Styles pour les boutons */
+	
 	button {
 	  margin-left: 10px;
 	  padding: 5px 10px;
@@ -120,7 +120,7 @@
 	  transition: background-color 0.3s ease;
 	}
   
-	/* Hover sur les boutons */
+	
 	button:hover {
 	  background-color: #0056b3;
 	}

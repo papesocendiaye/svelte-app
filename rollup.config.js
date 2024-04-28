@@ -12,6 +12,7 @@ function serve() {
 	let server;
 
 	function toExit() {
+		//kill the process
 		if (server) server.kill(0);
 	}
 
